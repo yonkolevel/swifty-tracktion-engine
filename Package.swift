@@ -22,12 +22,10 @@ let package = Package(
 
                 .headerSearchPath("../CPP/modules/juce/modules"),
                 .headerSearchPath("../CPP/modules"),
-                .unsafeFlags(["-std=c++17"]),
-
-                // Conditional compilation settings for Debug and Release
                 .define("DEBUG", .when(configuration: .debug)),
                 .define("NDEBUG", .when(configuration: .release)),
             ]
         ),
-    ]
+    ],
+    cxxLanguageStandard: .cxx17
 )
